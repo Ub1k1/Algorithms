@@ -1,0 +1,28 @@
+public class InsertionSort {
+
+    public InsertionSort(){ }
+
+    public int[] sort(int[] dataSet){ //sort from smallest to largest
+
+        for (int i = 1; i < dataSet.length; i++){
+            int temp = dataSet[i];
+
+            for (int j = i - 1; j >= 0; j--){
+
+                if(dataSet[j] > temp){
+                    dataSet[j+1] = dataSet[j];
+
+                    if(j == 0){
+                        dataSet[0] = temp;
+                    }
+
+                }else{
+                    dataSet[j+1] = temp;
+                    break;
+                }
+            }
+        }
+
+        return dataSet;
+    }
+}
